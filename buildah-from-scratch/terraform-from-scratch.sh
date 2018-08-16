@@ -11,7 +11,7 @@ wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd6
 unzip terraform_0.11.7_linux_amd64.zip
 cp terraform $mnt || exit 1
 buildah unmount $ctr
-buildah config $ctr
+buildah config --entrypoint='["/terraform"]' "${ctr}"
 buildah commit $ctr terraform-scratch:v0.11.7
 set +x
 echo "run 'podman run -v "$PWD":"$PWD":ro -v /tmp:/tmp:rw terraform-scratch:v0.11.7 fmt -list -check -write=false' to terraform fmt source"
