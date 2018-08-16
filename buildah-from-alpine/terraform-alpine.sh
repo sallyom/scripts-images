@@ -9,7 +9,7 @@ ctr=$(buildah from alpine) || (echo "Must be root to execute buildah" && exit 1)
 mnt=`buildah mount $ctr` || (echo "Must be root to execute buildah" && exit 1)
 wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
 unzip terraform_0.11.7_linux_amd64.zip
-cp $(pwd)/terraform $mnt || exit 1
+cp terraform $mnt || exit 1
 buildah unmount $ctr
 buildah config $ctr
 buildah commit $ctr terraform-alpine:v0.11.7
