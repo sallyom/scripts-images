@@ -1,0 +1,6 @@
+*output*
+*.tfvars*
+*.terraform*
+*rhel-ec2-launch/terraform/terraform*
+*rhel-ec2-launch/terraform/metadata*
+*.pem*

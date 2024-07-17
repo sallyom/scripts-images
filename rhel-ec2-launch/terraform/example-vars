@@ -1,0 +1,2 @@
+vpc_id = "vpc-replaceme"
+base_domain = "my-example-base-domain.com"
